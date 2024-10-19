@@ -1,8 +1,11 @@
-function fibonacci(n) {
-  let s = 0;
-  for (let i = 1; i < n.length; i++) {
-    s += n[i];
+function fibonacci(number) {
+  let result = [0, 1];
+  while (result.length < number) {
+    prev = result[result.length - 1];
+    prev2 = result[result.length - 2];
+
+    result.push(prev + prev2);
   }
-  return s;
+  return result;
 }
-console.log(fibonacci([0, 1, 1, 2, 3]));
+console.log(fibonacci(5));
